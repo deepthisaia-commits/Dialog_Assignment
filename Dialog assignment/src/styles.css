@@ -1,0 +1,56 @@
+/* Global styles - polished plain CSS */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #f7f9fc;
+  color: #222;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+  color: #111;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+/* Form */
+label { display:block; font-weight:600; margin-top:10px; }
+input[type="number"], input[type="text"], input[type="date"] {
+  width:100%; padding:8px 10px; border:1px solid #d9d9d9; border-radius:8px; box-sizing:border-box;
+  font-size: 1rem; margin-top:6px;
+}
+
+button { padding:8px 12px; border-radius:8px; border: none; cursor:pointer; font-weight:600; }
+button.primary { background:#0d6efd; color:#fff; }
+button.primary:hover { background:#0b5ed7; }
+button.ghost { background:transparent; color:#0d6efd; border:1px solid #0d6efd; }
+button.danger { background:#dc3545; color:#fff; }
+
+.small { font-size:0.9rem; color:#666; }
+
+.list-item { display:flex; justify-content:space-between; align-items:center; padding:10px; border-radius:8px; border:1px solid #f0f0f0; background:#fbfdff; margin-bottom:8px; }
+.chart-wrap { width:100%; height:320px; }
+
+.progress-box { display:flex; gap:16px; align-items:center; padding:12px; border-radius:8px; background:#f5fbf6; border:1px solid #e2f3e8; }
+.progress-number { font-size:1.2rem; font-weight:700; color:#0b5ed7; }

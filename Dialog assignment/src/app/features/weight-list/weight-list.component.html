@@ -1,0 +1,11 @@
+<h3>History</h3>
+<div *ngIf="!entries || entries.length===0" class="small">No entries yet.</div>
+<div *ngFor="let e of entries" class="list-item">
+  <div>
+    <div><strong>{{e.date}}</strong> — {{e.weight}} kg</div>
+    <div *ngIf="e.note" class="small">{{e.note}}</div>
+  </div>
+  <div>
+    <button class="ghost" (click)="remove(e.id)">Remove</button>
+  </div>
+</div>

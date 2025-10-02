@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>Weight Tracker</h1>
+
+  <div class="card">
+    <label for="target">🎯 Target Weight (kg)</label>
+    <input id="target" type="number"
+           [value]="(tracker.targetWeight$ | async) ?? ''"
+           (input)="onTargetChange($any($event.target).value)">
+
+    <div class="small" *ngIf="(tracker.entries$ | async)?.length">
+      Latest: <strong>{{ tracker.latestWeight }}kg</strong>
+    </div>
+  </div>
+
+  <div class="row">
+    <div style="flex: 1;">
+      <div class="card">
+        <app-weight-form></app-weight-form>
+      </div>
+
+      <div class="card">
+        <app-weight-list [entries]="tracker.entries$ | async"></app-weight-list>
+      </div>
+    </div>
+
+    <div style="width: 520px;">
+      <div class="card chart-wrap">
+        <app-weight-chart [entries]="tracker.entries$ | async" [target]="tracker.targetWeight$ | async"></app-weight-chart>
+      </div>
+
+      <div class="card">
+        <h3>Progress</h3>
+        <div *ngIf="tracker.progress; else noProgress" class="progress-box">
+          <div>
+            <div class="small">Difference to goal</div>
+            <div class="progress-number">{{ tracker.progress.diff }} kg</div>
+          </div>
+          <div *ngIf="tracker.progress.pct !== undefined">
+            <div class="small">Progress</div>
+            <div class="progress-number">{{ tracker.progress.pct }}%</div>
+          </div>
+        </div>
+        <ng-template #noProgress>
+          <div class="small">Set a target and add entries to see progress.</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

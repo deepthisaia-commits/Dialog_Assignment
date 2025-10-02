@@ -1,0 +1,15 @@
+<h3>Add / Update Entry</h3>
+<form (ngSubmit)="save()" #f="ngForm">
+  <label>Date</label>
+  <input name="date" type="date" [(ngModel)]="date" required>
+
+  <label>Weight (kg)</label>
+  <input name="weight" type="number" [(ngModel)]="weight" required>
+
+  <label>Note (opt.)</label>
+  <input name="note" type="text" [(ngModel)]="note">
+
+  <div style="margin-top:12px">
+    <button type="submit" class="primary">Save Entry</button>
+  </div>
+</form>
